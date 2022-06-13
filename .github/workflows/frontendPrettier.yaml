@@ -1,0 +1,18 @@
+defaults:
+    run:
+        working-directory: ./frontend
+
+name: Check code with Prettier on Frontend
+on:
+    pull_request:
+    push:
+jobs:
+    prettier:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checks out the latest Git commit
+              uses: actions/checkout@v2
+            - name: Sets up a Node.js environment
+              uses: actions/setup-node@v2
+            - run: npm ci
+            - run: npx prettier --config .prettierrc.js -l "*.{tsx,ts}"
