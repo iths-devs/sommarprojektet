@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DataAccess.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace backend.Controllers
@@ -10,14 +11,17 @@ namespace backend.Controllers
     [Route("[controller]")]
     public class TemplateController : ControllerBase
     {
-        public TemplateController()
+        private readonly ITemplateRepositoryService _templateRepositoryService;
+
+        public TemplateController(ITemplateRepositoryService templateRepositoryService)
         {
+            _templateRepositoryService = templateRepositoryService;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            return Ok();
+            return Ok(await _templateRepositoryService.ReadAllAsync());
         }
     }
 }
