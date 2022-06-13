@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
-import SimpleGet from './Components/SimpleGetRequestTemplate';
+import SimpleGet from './components/SimpleGetRequestTemplate';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 import './App.css';
-import Home from '../src/components/Home';
-import MyCourses from '../src/components/MyCourses';
+import Home from './components/Home';
+import MyCourses from './components/MyCourses';
 import logoImage from '../src/images/logoITHS.png';
 
 const App: FC = () => {
