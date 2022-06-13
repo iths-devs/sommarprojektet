@@ -6,8 +6,8 @@ import SimpleGet from "./Components/SimpleGetRequestTemplate";
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 
 import "./App.css";
-import Home from '../src/components/Home'
-import MyCourses from '../src/components/MyCourses'
+import Home from '../src/Components/Home'
+import MyCourses from '../src/Components/MyCourses'
 import logoImage from '../src/images/logoITHS.png'
 
 const App: FC = () => {
@@ -15,8 +15,8 @@ const App: FC = () => {
     <div className="App">
 
       <SimpleGet />
-    </div>
-  );
+
+
 
       <Router>
         <header>
