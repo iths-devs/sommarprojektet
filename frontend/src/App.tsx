@@ -1,5 +1,10 @@
 import React, { FC } from "react";
+
+import logo from "./logo.svg";
+import SimpleGet from "./Components/SimpleGetRequestTemplate";
+
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+
 import "./App.css";
 import Home from '../src/components/Home'
 import MyCourses from '../src/components/MyCourses'
@@ -8,6 +13,11 @@ import logoImage from '../src/images/logoITHS.png'
 const App: FC = () => {
   return (
     <div className="App">
+
+      <SimpleGet />
+    </div>
+  );
+
       <Router>
         <header>
           <nav className='nav'>
@@ -27,6 +37,7 @@ const App: FC = () => {
 
     </div>
   )
+
 };
 
 export default App;

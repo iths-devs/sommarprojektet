@@ -26,7 +26,7 @@ namespace DataAccess.Services
             return true;
         }
 
-        public Task<bool> CreateAsync(string newThing)
+        public async Task<bool> CreateAsync(string newThing)
         {
             throw new NotImplementedException();
         }
@@ -36,7 +36,7 @@ namespace DataAccess.Services
             throw new NotImplementedException();
         }
 
-        public Task<bool> DeleteOneAsync(int id)
+        public async Task<bool> DeleteOneAsync(int id)
         {
             throw new NotImplementedException();
         }
@@ -46,9 +46,9 @@ namespace DataAccess.Services
             throw new NotImplementedException();
         }
 
-        public Task<ICollection<string>> ReadAllAsync()
+        public async Task<ICollection<string>> ReadAllAsync()
         {
-            throw new NotImplementedException();
+            return _items.Values.ToList();
         }
 
         public string ReadOne(int id)
@@ -56,7 +56,7 @@ namespace DataAccess.Services
             throw new NotImplementedException();
         }
 
-        public Task<string> ReadOneAsync(int id)
+        public async Task<string> ReadOneAsync(int id)
         {
             throw new NotImplementedException();
         }
@@ -66,7 +66,7 @@ namespace DataAccess.Services
             throw new NotImplementedException();
         }
 
-        public Task<bool> UpdateOneAsync(int id)
+        public async Task<bool> UpdateOneAsync(int id)
         {
             throw new NotImplementedException();
         }
