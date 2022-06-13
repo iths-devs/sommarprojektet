@@ -1,0 +1,25 @@
+header nav {
+  background: rgb(102, 34, 70);
+  background: linear-gradient(
+    90deg,
+    rgba(102, 34, 70, 1) 0%,
+    rgba(176, 54, 119, 1) 62%,
+    rgba(250, 210, 243, 1) 100%
+  );
+  top: 0;
+  padding: 1em;
+}
+header nav a {
+  margin: 0em 1em;
+  color: white;
+  text-decoration: none;
+  display: inline;
+}
+header nav h1 {
+  font: Avenir;
+  color: white;
+}
+
+header nav img {
+  max-height: 4em;
+}
