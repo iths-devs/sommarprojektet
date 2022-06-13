@@ -1,8 +1,5 @@
 import React, { FC } from 'react';
-
-import logo from './logo.svg';
 import SimpleGet from './Components/SimpleGetRequestTemplate';
-
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 import './App.css';
@@ -19,7 +16,6 @@ const App: FC = () => {
                 <header>
                     <nav className='nav'>
                         <Link to='/'>
-                            {' '}
                             <img src={logoImage} alt='logo' />
                         </Link>
                         <Link to='/'> Hem </Link>
