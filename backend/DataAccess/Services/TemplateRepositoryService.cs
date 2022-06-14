@@ -6,13 +6,12 @@ namespace DataAccess.Services
 {
     public class TemplateRepositoryService : ITemplateRepositoryService
     {
-        //private readonly Dictionary<int, string> _items;
-        //private int _id;
         private readonly TemplateDbContext _dbContext;
 
         public TemplateRepositoryService(TemplateDbContext dbContext)
         {
             _dbContext = dbContext;
+            
             //This is to ensure that the Db is created. Should only be needed for In Memory. 
             _dbContext.Database.EnsureCreated();
         }
@@ -83,14 +82,28 @@ namespace DataAccess.Services
             return target is not null ? target.Value : string.Empty;
         }
 
-        public bool UpdateOne(int id)
+        public bool UpdateOne(int id, string value)
         {
-            throw new NotImplementedException();
+            var target = _dbContext.Templates.FirstOrDefault(t => t.Id == id);
+            
+            if (target is null)
+                return false;
+            
+            target.Value = value;
+            _dbContext.SaveChanges();
+            return true;
         }
 
-        public async Task<bool> UpdateOneAsync(int id)
+        public async Task<bool> UpdateOneAsync(int id, string value)
         {
-            throw new NotImplementedException();
+            var target = await _dbContext.Templates.FirstOrDefaultAsync(t => t.Id == id);
+            
+            if (target is null)
+                return false;
+            
+            target.Value = value;
+            await _dbContext.SaveChangesAsync();
+            return true;
         }
     }
 }
