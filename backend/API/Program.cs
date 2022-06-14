@@ -2,17 +2,24 @@ using DataAccess.Services;
 using DataAccess.Services.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
-
+var services = builder.Services;
+var configuration = builder.Configuration;
 // Add services to the container.
 
-builder.Services.AddControllers();
+services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+services.AddEndpointsApiExplorer();
+services.AddSwaggerGen();
 
-builder.Services.AddCors();
+services.AddCors();
 
-builder.Services.AddSingleton<ITemplateRepositoryService, TemplateRepositoryService>();
+services.AddSingleton<ITemplateRepositoryService, TemplateRepositoryService>();
+
+services.AddAuthentication().AddMicrosoftAccount(microsoftOptions =>
+    {
+        microsoftOptions.ClientId = configuration["Authentication:Microsoft:ClientId"];
+        microsoftOptions.ClientSecret = configuration["Authentication:Microsoft:ClientSecret"];
+    });
 
 var app = builder.Build();
 
