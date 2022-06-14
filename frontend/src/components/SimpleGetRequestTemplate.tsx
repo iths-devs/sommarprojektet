@@ -8,7 +8,8 @@ const GetTemplate = () => {
         const data = res.data;
         console.log(data);
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        setResponses((r) => (r = data));
+        // prettier-ignore
+        setResponses(r => (r = data));
     };
 
     return (
