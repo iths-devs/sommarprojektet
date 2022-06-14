@@ -1,5 +1,6 @@
 using DataAccess.Services;
 using DataAccess.Services.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
@@ -20,6 +21,9 @@ services.AddAuthentication().AddMicrosoftAccount(microsoftOptions =>
         microsoftOptions.ClientId = configuration["Authentication:Microsoft:ClientId"];
         microsoftOptions.ClientSecret = configuration["Authentication:Microsoft:ClientSecret"];
     });
+builder.Services.AddScoped<ITemplateRepositoryService, TemplateRepositoryService>();
+
+builder.Services.AddDbContext<TemplateDbContext>(options => options.UseInMemoryDatabase("TemplateImdb"));
 
 var app = builder.Build();
 
