@@ -15,4 +15,4 @@ jobs:
             - name: Sets up a Node.js environment
               uses: actions/setup-node@v2
             - run: npm ci
-            - run: npx prettier --config .prettierrc -l "src/**/*.{js,jsx,tsx,ts}\""
+            - run: npx prettier --config .prettierrc -l ."
