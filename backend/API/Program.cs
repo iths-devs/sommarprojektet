@@ -21,7 +21,12 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
-    app.UseCors(a=> a.AllowAnyOrigin());
+    app.UseCors(a => a.AllowAnyOrigin());
+}
+else
+{
+#warning Setup CORS
+    //TODO: Set up Cors policy
 }
 
 app.UseHttpsRedirection();

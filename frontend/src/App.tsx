@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import SimpleGet from './components/SimpleGetRequestTemplate';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
@@ -7,7 +7,7 @@ import Home from './components/Home';
 import MyCourses from './components/MyCourses';
 import logoImage from '../src/images/logoITHS.png';
 
-const App: FC = () => {
+const App = () => {
     return (
         <div className='App'>
             <SimpleGet />

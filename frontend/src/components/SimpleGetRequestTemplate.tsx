@@ -1,13 +1,14 @@
-import React, { FC, useState } from 'react';
+import React, {useState}  from 'react';
 import axios from 'axios';
 
-const GetTemplate: FC = () => {
+const GetTemplate = () => {
     const [responses, setResponses] = useState<string[]>([]);
     const get = async () => {
         const res = await axios.get('https://localhost:7156/Template');
         const data = res.data;
         console.log(data);
-        setResponses((u) => (u = data));
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        setResponses(r => r = data);
     };
 
     return (
