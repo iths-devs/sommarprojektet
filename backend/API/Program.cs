@@ -1,5 +1,6 @@
 using DataAccess.Services;
 using DataAccess.Services.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,7 +13,9 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddCors();
 
-builder.Services.AddSingleton<ITemplateRepositoryService, TemplateRepositoryService>();
+builder.Services.AddScoped<ITemplateRepositoryService, TemplateRepositoryService>();
+
+builder.Services.AddDbContext<TemplateDbContext>(options => options.UseInMemoryDatabase("TemplateImdb"));
 
 var app = builder.Build();
 
