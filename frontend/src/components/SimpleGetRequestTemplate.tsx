@@ -7,9 +7,10 @@ const GetTemplate = () => {
         const res = await axios.get('https://localhost:7156/Template');
         const data = res.data;
         console.log(data);
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        /*eslint-disable */
         // prettier-ignore
         setResponses(r => (r = data));
+        /*eslint-enable */
     };
 
     return (
