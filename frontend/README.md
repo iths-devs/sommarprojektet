@@ -46,4 +46,4 @@ Checks the code for lint errors according to the [ESLint](.eslintrc.json) config
 
 ### `npm run format`
 
-Formats the code according to the [Prettier](.prettierrc.json) configuration.
+Formats the code according to the [Prettier](.prettierrc) configuration.
