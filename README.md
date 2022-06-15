@@ -2,7 +2,7 @@
 
 ## What is it?
 
-The goal of this project is to create a new and better version of [ITHSDistans](https://www.ithsdistans.se/).
+The goal of this project is to create a new and improved version of [ITHSDistans](https://www.ithsdistans.se/).
 
 ## Contributing
 
