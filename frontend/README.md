@@ -1,40 +1,49 @@
-# Build and run the frontend
+# Building and running the frontend
 
-## Before you can run anything, you need to install all the necessary dependencies.
+## Install Node.js
 
+If you already have Node.js installed, you can skip step 1. If you already have VS Code setup for JavaScript development you can skip step 1 & 2.
+
+1. Go to [this page](https://nodejs.org/en/download/), download and install Node.js.
+2. In Visual Studio Code, install the following extensions:
+    - ES7 React/Redux/GraphQL/React-Native snippets
+    - Prettier – Code formatter
+    - ESLint
+
+## Install all required dependencies
+
+Navigate to the `frontend` directory and run:
 
 ```bash
-cd sommarprojektet # Change to the project directory
-
-npm install # Install all dependencies
+npm install
 ```
 
 ## Available Scripts
 
-In the project directory, you can run:
+In the `frontend` directory, you can run:
 
 ### `npm start`
 
-Runs the app in the development mode.\
+Runs the app in the development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
+The page will reload if you make edits.
 You will also see any lint errors in the console.
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
+Builds the app for production to the `build` folder.
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
+The build is minified and the filenames include the hashes.
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 ### `npm run lint`
 
-This will check your code for lint errors according to the rules in the [`eslintrc`](.eslintrc.json).
+Checks the code for lint errors according to the [ESLint](.eslintrc.json) configuration.
 
 ### `npm run format`
 
-This will format all files in the `frontend` directory according to the rules in the [`prettierrc`](.prettierrc).
+Formats the code according to the [Prettier](.prettierrc) configuration.
