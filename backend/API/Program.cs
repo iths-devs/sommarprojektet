@@ -14,8 +14,6 @@ services.AddSwaggerGen();
 
 services.AddCors();
 
-services.AddSingleton<ITemplateRepositoryService, TemplateRepositoryService>();
-
 services.AddAuthentication().AddMicrosoftAccount(microsoftOptions =>
     {
         microsoftOptions.ClientId = configuration["Authentication:Microsoft:ClientId"];
@@ -43,6 +41,7 @@ else
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+app.UseAuthentication();
 
 app.MapControllers();
 
