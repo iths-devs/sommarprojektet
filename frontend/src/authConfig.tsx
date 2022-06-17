@@ -3,14 +3,14 @@
  * Licensed under the MIT License.
  */
 
-import { LogLevel } from '@azure/msal-browser';
+import { Configuration, LogLevel } from '@azure/msal-browser';
 
 /**
  * Configuration object to be passed to MSAL instance on creation.
  * For a full list of MSAL.js configuration parameters, visit:
  * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/configuration.md
  */
-export const msalConfig = {
+export const msalConfig: Configuration = {
     auth: {
         clientId: 'faf429dc-ebdf-453e-9b96-7539874b9d59',
         authority: 'https://login.microsoftonline.com/5b679921-53f7-4642-a251-8a603608d21c',
