@@ -35,7 +35,6 @@ const GetTemplate = () => {
             // prettier-ignore
             setResponses(r => (r = data));
             /*eslint-enable */
-            /*eslint-enable */
         }
     };
 
