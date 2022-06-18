@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import { useMsal } from '@azure/msal-react';
 // import { useIsAuthenticated } from '@azure/msal-react';
 

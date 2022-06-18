@@ -1,5 +1,4 @@
 import React from 'react';
-import SimpleGet from './components/SimpleGetRequestTemplate';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 import { useIsAuthenticated } from '@azure/msal-react';
