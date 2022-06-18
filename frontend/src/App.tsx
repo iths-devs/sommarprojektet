@@ -12,27 +12,39 @@ import logoImage from '../src/images/logoITHS.png';
 
 const App = () => {
     const isAuthenticated = useIsAuthenticated();
+
     return (
         <div className='App'>
-            <SimpleGet />
-            {isAuthenticated ? <SignOutButton /> : <SignInButton />}
-            <Router>
-                <header>
-                    <nav className='nav'>
-                        <Link to='/'>
+            {/* <SimpleGet /> */}
+            {!isAuthenticated ? (
+                <div>
+                    <header>
+                        <nav>
                             <img src={logoImage} alt='logo' />
-                        </Link>
-                        <Link to='/'> Hem </Link>
-                        <Link to='/courses'> Mina kurser </Link>
-                    </nav>
-                </header>
-                <main>
-                    <Routes>
-                        <Route path='/courses' element={<MyCourses />} />
-                        <Route path='/' element={<Home />} />
-                    </Routes>
-                </main>
-            </Router>
+                        </nav>
+                    </header>
+                    <SignInButton />
+                </div>
+            ) : (
+                <Router>
+                    <header>
+                        <nav className='nav'>
+                            <Link to='/'>
+                                <img src={logoImage} alt='logo' />
+                            </Link>
+                            <Link to='/'> Hem </Link>
+                            <Link to='/courses'> Mina kurser </Link>
+                            <SignOutButton />
+                        </nav>
+                    </header>
+                    <main>
+                        <Routes>
+                            <Route path='/courses' element={<MyCourses />} />
+                            <Route path='/' element={<Home />} />
+                        </Routes>
+                    </main>
+                </Router>
+            )}
         </div>
     );
 };
