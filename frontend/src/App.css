@@ -23,3 +23,16 @@ header nav h1 {
 header nav img {
     max-height: 4em;
 }
+
+.ml-auto button {
+    background: rgb(102, 34, 70);
+    color: white;
+    padding: 1em;
+    margin: 1em;
+    border-radius: 0.5em;
+    box-shadow: 0.4em 0.4em 0.5em rgb(48, 47, 47);
+}
+.ml-auto button:active {
+    transform: translateY(0.4em);
+    box-shadow: 0.1em 0.1em 0.1em rgb(48, 47, 47);
+}

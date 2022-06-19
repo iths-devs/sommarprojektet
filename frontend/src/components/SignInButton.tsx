@@ -22,7 +22,7 @@ export const SignInButton = () => {
         }
     };
     return (
-        <DropdownButton variant='secondary' className='ml-auto' title='Sign In'>
+        <DropdownButton variant='secondary' className='ml-auto' title='Sign in'>
             <Dropdown.Item as='button' onClick={() => handleLogin('popup')}>
                 Sign in using Popup
             </Dropdown.Item>
