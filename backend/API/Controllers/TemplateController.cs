@@ -1,23 +1,24 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using DataAccess.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Identity.Web.Resource;
 
-namespace backend.Controllers
+namespace API.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("[controller]")]
     public class TemplateController : ControllerBase
     {
         private readonly ITemplateRepositoryService _templateRepositoryService;
-
+        
         public TemplateController(ITemplateRepositoryService templateRepositoryService)
         {
             _templateRepositoryService = templateRepositoryService;
         }
 
+#warning fix authorization!;
+        [AllowAnonymous]
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
