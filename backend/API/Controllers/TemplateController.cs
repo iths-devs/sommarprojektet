@@ -11,14 +11,12 @@ namespace API.Controllers
     public class TemplateController : ControllerBase
     {
         private readonly ITemplateRepositoryService _templateRepositoryService;
-        
+
         public TemplateController(ITemplateRepositoryService templateRepositoryService)
         {
             _templateRepositoryService = templateRepositoryService;
         }
 
-#warning fix authorization!;
-        [AllowAnonymous]
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {

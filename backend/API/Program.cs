@@ -20,12 +20,9 @@ services.AddCors();
 services.AddScoped<ITemplateRepositoryService, TemplateRepositoryService>();
 
 services.AddDbContext<TemplateDbContext>(options => options.UseInMemoryDatabase("TemplateImdb"));
+
 services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-    .AddMicrosoftIdentityWebApi(builder.Configuration.GetSection("AzureAd")).EnableTokenAcquisitionToCallDownstreamApi()
-            .AddMicrosoftGraph(builder.Configuration.GetSection("MicrosoftGraph"))
-            .AddDownstreamWebApi("DownstreamApi",builder.Configuration.GetSection("DownstreamApi"))
-            .AddInMemoryTokenCaches();
-var app = builder.Build();
+    .AddMicrosoftIdentityWebApi(builder.Configuration.GetSection("AzureAd"));var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

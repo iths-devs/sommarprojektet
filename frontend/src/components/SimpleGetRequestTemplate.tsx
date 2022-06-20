@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
-import { useMsal } from '@azure/msal-react';
+import { useMsal, useIsAuthenticated } from '@azure/msal-react';
 // import { useIsAuthenticated } from '@azure/msal-react';
 
 const GetTemplate = () => {
     const [responses, setResponses] = useState<string[]>([]);
     const { instance } = useMsal();
+    const isAuthenticated = useIsAuthenticated();
 
     const get = async () => {
+        if (!isAuthenticated) {
+            return;
+        }
         const account = instance.getAllAccounts()[0];
 
         const accessTokenRequest = {
@@ -17,7 +21,7 @@ const GetTemplate = () => {
         const token = await instance.acquireTokenSilent(accessTokenRequest);
 
         const headers = new Headers();
-        const bearer = `Bearer ${token}`;
+        const bearer = `Bearer ${token.idToken}`;
 
         headers.append('Authorization', bearer);
 
