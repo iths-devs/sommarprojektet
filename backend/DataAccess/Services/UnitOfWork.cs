@@ -42,7 +42,7 @@ public class UnitOfWork
         _dbContext.SaveChanges();
         return true;
     }
-    public bool DeleteProgram(int id, Program program)
+    public bool DeleteProgram(int id)
     {
         if (!_programRepository.DeleteOne(id))
             return false;
