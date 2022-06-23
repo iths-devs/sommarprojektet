@@ -9,8 +9,8 @@ public class Program
     public string Title { get; set; } = string.Empty;
     public string Description { get; set; } = string.Empty;
     public string Location { get; set; } = string.Empty;
-    public virtual Guid? Manager { get; set; }
-    public virtual ICollection<Guid> Students { get; set; } = new HashSet<Guid>();
+    public virtual User? Manager { get; set; }
+    public virtual ICollection<User> Students { get; set; } = new HashSet<User>();
     public virtual ICollection<Course> Courses { get; set; } = new HashSet<Course>();
     public virtual ICollection<Post> Posts { get; set; } = new HashSet<Post>();
 

@@ -11,8 +11,8 @@ public class Course
     public DateOnly StartDate { get; set; }
     public DateOnly EndDate { get; set; }
     public GradeScale GradeScale { get; set; }
-    public virtual Guid? Manager { get; set; }
-    public virtual ICollection<Guid> Teachers { get; set; } = new HashSet<Guid>();
+    public virtual User? Manager { get; set; }
+    public virtual ICollection<User> Teachers { get; set; } = new HashSet<User>();
     public virtual ICollection<Enrollment> Enrollments { get; set; } = new HashSet<Enrollment>();
     public virtual ICollection<Post> Posts { get; set; } = new HashSet<Post>();
     public virtual ICollection<Assignment> Assignments { get; set; } = new HashSet<Assignment>();

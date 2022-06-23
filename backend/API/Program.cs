@@ -17,9 +17,13 @@ services.AddSwaggerGen();
 
 services.AddCors();
 
+services.AddScoped<UnitOfWork>();
+
 services.AddScoped<ITemplateRepositoryService, TemplateRepositoryService>();
+services.AddScoped<ICourseRepositoryService, CourseRepositoryService>();
 
 services.AddDbContext<TemplateDbContext>(options => options.UseInMemoryDatabase("TemplateImdb"));
+services.AddDbContext<SchoolDbContext>(options => options.UseInMemoryDatabase("SchoolImdb"));
 
 services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddMicrosoftIdentityWebApi(builder.Configuration.GetSection("AzureAd"));var app = builder.Build();

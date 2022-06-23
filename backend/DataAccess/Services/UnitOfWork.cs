@@ -1,13 +1,14 @@
 using Data;
+using DataAccess.Services.Interfaces;
 
 namespace DataAccess.Services;
 
 public class UnitOfWork
 {
     private readonly SchoolDbContext _dbContext;
-    private readonly CourseRepositoryService _courseRepository;
+    private readonly ICourseRepositoryService _courseRepository;
 
-    public UnitOfWork(SchoolDbContext dbContext, CourseRepositoryService courseRepository)
+    public UnitOfWork(SchoolDbContext dbContext, ICourseRepositoryService courseRepository)
     {
         _dbContext = dbContext;
         _courseRepository = courseRepository;
@@ -21,7 +22,7 @@ public class UnitOfWork
         return true;
     }
 
-    public ICollection<Course> GetAllCourses()
+    public ICollection<Course> GetCourses()
     {
         return _courseRepository.ReadAll();
     }

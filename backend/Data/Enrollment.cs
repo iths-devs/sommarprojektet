@@ -8,7 +8,7 @@ public class Enrollment
     public int Id { get; set; }
     
     [Required]
-    public virtual Guid Student { get; set; }
+    public virtual User? Student { get; set; }
 
     [Required]
     public virtual Course Course { get; set; } = new();

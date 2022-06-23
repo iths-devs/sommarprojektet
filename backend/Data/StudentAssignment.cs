@@ -14,5 +14,4 @@ public class StudentAssignment
     public virtual Enrollment Enrollment { get; set; } = new();
 
     public Grade Grade { get; set; } = Grade.None;
-    public virtual Attachment? Attachment { get; set; }
 }

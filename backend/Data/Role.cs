@@ -17,7 +17,7 @@ public class Role
         Name = @enum.ToString();
     }
 
-    protected Role() { } //For EF
+    public Role() { } //For EF
     
     public static implicit operator Role(RoleName @enum) => new (@enum);
 
