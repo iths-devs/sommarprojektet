@@ -6,14 +6,29 @@ namespace DataAccess.Services;
 public class UnitOfWork
 {
     private readonly SchoolDbContext _dbContext;
+    private readonly IProgramRepositoryService _programRepository;
     private readonly ICourseRepositoryService _courseRepository;
 
-    public UnitOfWork(SchoolDbContext dbContext, ICourseRepositoryService courseRepository)
+    public UnitOfWork(SchoolDbContext dbContext, ICourseRepositoryService courseRepository, IProgramRepositoryService programRepository)
     {
         _dbContext = dbContext;
         _courseRepository = courseRepository;
+        _programRepository = programRepository;
     }
-    
+
+    #region ProgramMethods
+
+    public bool AddProgram(Program program)
+    {
+        if (!_programRepository.Create(program))
+            return false;
+        _dbContext.SaveChanges();
+        return true;
+    }
+
+
+    #endregion
+    #region CourseMethods
     public bool AddCourse(Course course)
     {
         if (!_courseRepository.Create(course))
@@ -47,4 +62,5 @@ public class UnitOfWork
         _dbContext.SaveChanges();
         return true;
     }
+    #endregion
 }

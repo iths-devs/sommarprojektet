@@ -18,7 +18,7 @@ public class CourseRepositoryService : ICourseRepositoryService
 
     public bool Create(Course course)
     {
-        if (_dbContext.Courses.Any(c => c.Id == course.Id))
+        if (_dbContext.Courses.Any(c => c.Title == course.Title))
             return false;
         _dbContext.Courses.Add(course);
         return true;
@@ -39,7 +39,6 @@ public class CourseRepositoryService : ICourseRepositoryService
         var target = _dbContext.Courses.FirstOrDefault(c => c.Id == id);
         if (target is null)
             return false;
-        // target = course;
         target.Title = course.Title;
         target.Description = course.Description;
         target.StartDate = course.StartDate;
@@ -85,7 +84,6 @@ public class CourseRepositoryService : ICourseRepositoryService
         var target = await _dbContext.Courses.FirstOrDefaultAsync(c => c.Id == id);
         if (target is null)
             return false;
-        //target = course;
         target.Title = course.Title;
         target.Description = course.Description;
         target.StartDate = course.StartDate;

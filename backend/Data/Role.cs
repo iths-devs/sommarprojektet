@@ -11,7 +11,7 @@ public class Role
     [Required, MaxLength(100)]
     public string Name { get; set; } = string.Empty;
 
-    private Role(RoleName @enum)
+    public Role(RoleName @enum)
     {
         Id = (int)@enum;
         Name = @enum.ToString();
