@@ -17,7 +17,6 @@ public class UnitOfWork
     }
 
     #region ProgramMethods
-
     public bool AddProgram(Program program)
     {
         if (!_programRepository.Create(program))
@@ -26,7 +25,30 @@ public class UnitOfWork
         return true;
     }
 
+    public ICollection<Program> GetPrograms()
+    {
+        return _programRepository.ReadAll();
+    }
 
+    public Program? GetProgram(int id)
+    {
+        return _programRepository.ReadOne(id);
+    }
+
+    public bool UpdateProgram(int id, Program program)
+    {
+        if (!_programRepository.UpdateOne(id, program))
+            return false;
+        _dbContext.SaveChanges();
+        return true;
+    }
+    public bool DeleteProgram(int id, Program program)
+    {
+        if (!_programRepository.DeleteOne(id))
+            return false;
+        _dbContext.SaveChanges();
+        return true;
+    }
     #endregion
     #region CourseMethods
     public bool AddCourse(Course course)
